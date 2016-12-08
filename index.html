@@ -35,7 +35,6 @@
                 <ul>
                     <li>The function and purpose of business rules</li>
                     <li>The MECE criterion</li>
-                    <li>How to define business rules</li>
                     <li><strong>Why you should care.</strong></li>
                 </ul>
             </ul>
@@ -43,45 +42,96 @@
         <section>
             <h2>The function and purpose of business rules</h2>
             <section>
-                Business rules = Definitions <small>...but for data</small>
+                <span style="font-size: 48px">Business rules = Definitions <span style="font-size: 18px">...but for data</span></span>
             </section>
             <section>
-                Business rules clarify:
+                <span>And definitions are easy...aren't they?</span>
+                <aside class="notes">
+                    <ul>
+                        <li>Ask everyone to write down a definition of assessment</li>
+                        <li>Then ask everyone to pass those definitions to their left until you tell them to stop</li>
+                        <li>Don't let this go on for too long, because you'll want to make sure the same person doesn't get their definition</li>
+                        <li>Now ask everyone who got exactly the same definition after passing them to stand up and take a bow</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                But unlike a definition in English, business rules also need to provide sufficient information to consistently identify:<br>
+
                 <ul>
-                    <li>how data are stored</li>
-                    <li>what values are valid</li>
+                    <li>how the data are stored</li>
+                    <li>which values are valid</li>
                     <li>how to compute/derive a value</li>
-                    <li><strong>how we discuss and understand what it is that we are measuring and how we are measuring it</strong></li>
                 </ul>
                 <aside class="notes">
                     <ul>
                         <li>how data are stored</li>
                         <ul>
-                            <li>Are the data numeric, string, bits, boolean, files, etc...</li>
+                            <li>Are the data integers, floating point decimals, string, bits, boolean, files, dates, times, etc...</li>
                         </ul>
                         <li>what values are valid</li>
                         <ul>
                             <li>Can we mark students absent for future dates?</li>
+                            <li>Can you enter data from two months ago into the system?</li>
+                            <li>Can a student be suspended multiple times for the same incident?</li>
                         </ul>
                         <li>How to compute/derive a value</li>
                         <ul>
-                            <li>Can a student be identified as an English Learner prior to taking any assessments of their language proficiency</li>
-                            <li>What if they have that assessment but do not have a home language survey</li>
-                            <li>Can a student be suspended multiple times for the same incident?</li>
+                            <li>"Growth" on the WIDA ACCESS Assessment is actually a function of the change in scaled score from one year to the next given the previous year's proficiency level</li>
+                            <li>College and Career Readiness benchmarks for PSAT, MAP, ACT, etc... are all examples of derived values</li>
                         </ul>
                         <li>how we discuss and understand what it is that we are measuring and how we are measuring it</li>
                     </ul>
                 </aside>
             </section>
             <section>
-                <a href="https://fcps.github.io/whatIsDataGovernance/#/5/1">Data Stewards</a> help <a href="https://fcps.github.io/whatIsDataGovernance/#/5">Data owners</a> monitor and adjust business rules related to regulatory or policy changes
+                <br><br>
+                <h3>Without well defined business rules we...</h3>
+                <ul>
+                    <li>will continue to struggle at communicating with and about data</li>
+                    <li>may not be measuring the same thing at the same time with the same instrument</li>
+                    <li>will lack the consistency needed to effectively infuse our decision-making processes with data</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>When someone asks for suspension data, do they mean
+                            <ul>
+                                <li>all suspensions? or </li>
+                                <li>are they referencing only to out of school suspensions? or </li>
+                                <li>in-school suspensions? or </li>
+                                <li>some other form of detainment?</li>
+                            </ul>
+                        <li>If what was meant was out of school suspensions, but your interpretation was all suspensions are you actually measuring the same thing?</li>
+                        <li>The consistency in the definition/interpretation affects statistical properties as well</li>
+                        <li>Consistency in this context is the language analog of the statistical concept of reliability</li>
+                    </ul>
+                </aside>
             </section>
             <section>
-                <a href="https://fcps.github.io/whatIsDataGovernance/#/5">Data owners</a> approve the business rules for their data.
+                <br><br>
+                <h3>Computers make this easy for us....</h3>
+                <aside class="notes">
+                    This is basically your opportunity to set up the expectation that easy actually means easy in the way that most people would interpret it
+                </aside>
             </section>
             <section>
-                <a href="https://fcps.github.io/whatIsDataGovernance/#/5/2">Data managers</a> ensure the approved business rules are implemented in the data systems
+                <br><br>
+                <h3>A business rule is either <code>true</code> or <code>false</code></h3>
+                <aside class="notes">
+                    Binary is pretty easy...I mean it only contains two states so if nothing else computers make things very clear for us
+                </aside>
             </section>
+            <section>
+                <br><br>
+                <h3>and what could be simpler than that?....</h3>
+                <aside class="notes">
+                    Depending on where you are for time with this you could prompt/prod folks for what they think is easy for us to get out of the data system(s).<br>
+                    Most people in the room have no idea how complex relational data base management systems can be, particularly transactional systems that are normalized at higher orders.
+                    The thing here is really to lead them into getting demographics/enrollment data<br>
+                    If you're running tight on time hit the right arrow on the keyboard to move into the next section of slides after this
+                </aside>
+            </section>
+
             <section>
                 Getting a list of enrolled students and their demographic characteristics seems like it should be easy, doesn't it?
             </section>
@@ -208,11 +258,11 @@ e.startDate <= @end AND ISNULL(e.endDate, @end) >= @start
 ) AS b;
 						</code></pre>
             </section>
+          </section>
+        <section>
+            <h2>The function and purpose of business rules</h2>
             <section>
-                What may be easy for us to comprehend, is not always easy to translate into a series of 1's and 0's so the computer can understand.
-            </section>
-            <section>
-                Business rules help to solve the translation of our thoughts into testable conditions that computers can understand.
+                Data governance helps us to achieve this through distributed leadership and unwaivering commitment to using a standardized process
             </section>
         </section>
         <section>
@@ -226,21 +276,31 @@ e.startDate <= @end AND ISNULL(e.endDate, @end) >= @start
                 </ul>
             </section>
             <section>
-                Remember the reading from <a href="https://www.amazon.com/Problem-Solving-101-Simple-People/dp/1591842425">Problem Solving 101</a>?
+                What may be easy for us to comprehend, is not always easy to translate into the series of <code>1's</code> and <code>0's</code> a computer can understand.
+                <aside class="notes">
+                    The MECE criterion is a way that we can frame our thought process to arrive at an awesome set of awesomely awesome boolean values that flow from logic
+                </aside>
             </section>
             <section>
-                The diagrams show how to evaluate the MECE criterion in other contexts (e.g., defining all afterschool activities).
+                Well defined and maintained business rules transcend this limitation of our people language using conditions that can be tested as a series of true/false rules
+                <aside class="notes">
+                    They were supposed to read Problem Solving 101 for this week so you should ask them what symbol should be used for these testable conditions when creating a diagram of the rule/logic.
+                </aside>
             </section>
             <section>
-
+                In case you're wondering how we get to that point, think back to last week....
+                <aside class="notes">
+                    You should feel free to read the next couple slides where it starts to define how business rules move across the system and get put into practice
+                </aside>
             </section>
-        </section>
-        <section>
-            <h2>How to Define Business Rules</h2>
             <section>
-                <ul>
-                    <li>Placeholder</li>
-                </ul>
+                <a href="https://fcps.github.io/whatIsDataGovernance/#/5/1">Data Stewards</a> help <a href="https://fcps.github.io/whatIsDataGovernance/#/5">Data owners</a> monitor and adjust business rules related to regulatory or policy changes and maintain these rules in a data governance structure
+            </section>
+            <section>
+                <a href="https://fcps.github.io/whatIsDataGovernance/#/5">Data owners</a> approve the business rules for their data and submit the necessary <span style="font-size: 48px; font-weight: bolder">Change Management Requests</span> when those rules need to be updated/changed.
+            </section>
+            <section>
+                <a href="https://fcps.github.io/whatIsDataGovernance/#/5/2">Data managers</a> ensure the approved business rules are implemented in the data systems
             </section>
         </section>
         <section>
@@ -276,8 +336,9 @@ e.startDate <= @end AND ISNULL(e.endDate, @end) >= @start
         <section>
             <h1>For next ELT meeting</h1>
             <ul>
-                <li>Placeholder</li>
-
+                <li>Identify a single datum that you and/or your office would own</li>
+                <li>For the high-speed low-drag types in the room, feel free to try diagramming the business rules for that datum using the Problem Solving 101 diagrams as examples</li>
+                <li>Next week we will dive a bit further into how to create the definitions and how we can be transformative in fairly simple ways that improve our data operations</li>
             </ul>
         </section>
     </div>
